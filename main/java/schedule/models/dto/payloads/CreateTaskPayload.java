@@ -12,5 +12,5 @@ public class CreateTaskPayload {
     private Long end;
     private String notes;
     private Long deadline;
-    private long project;
+    private Long project;
 }

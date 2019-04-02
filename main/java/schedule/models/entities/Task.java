@@ -44,7 +44,7 @@ public class Task {
         this.end = createTaskPayload.getEnd();
         this.notes = createTaskPayload.getNotes();
         this.deadline = createTaskPayload.getDeadline();
-        this.project = new Project(createTaskPayload.getProject());
+        if(createTaskPayload.getProject()!=null) this.project = new Project(createTaskPayload.getProject());
         this.planed = true;
         this.position = 0;
     }
