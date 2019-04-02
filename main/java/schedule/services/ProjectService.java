@@ -24,6 +24,6 @@ public class ProjectService {
     public void updateProject(UpdateProjectPayload payload, long id){
         Project project = projectRepository.findById(id).orElseThrow(NotFoundException::new);
         project.applyUpdates(payload);
-        projectRepository.save(project)
+        projectRepository.save(project);
     }
 }
