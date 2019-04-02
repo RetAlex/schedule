@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a463da24-60f4-4f1c-a105-e93dfc166854" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/java/schedule/_main/WebAppConfigs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/schedule/models/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/schedule/models/entities/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/java/schedule/_main/WebAppConfigs.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -57,11 +57,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/java/schedule/models/entities/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="390">
+              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -102,13 +111,13 @@
         <option value="$PROJECT_DIR$/main/java/schedule/controllers/ProjectController.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/models/dto/payloads/CreateProjectPayload.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/models/converters/ProjectSerializer.java" />
-        <option value="$PROJECT_DIR$/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/main/java/schedule/models/entities/Task.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/models/entities/Project.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/services/TaskService.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/controllers/TaskController.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/repositories/TaskRepository.java" />
         <option value="$PROJECT_DIR$/main/java/schedule/_main/WebAppConfigs.java" />
+        <option value="$PROJECT_DIR$/main/java/schedule/models/entities/Task.java" />
+        <option value="$PROJECT_DIR$/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -284,12 +293,12 @@
       <updated>1554111545559</updated>
       <workItem from="1554111547685" duration="5669000" />
       <workItem from="1554126696920" duration="3208000" />
-      <workItem from="1554220196166" duration="6975000" />
+      <workItem from="1554220196166" duration="7300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15852000" />
+    <option name="totallyTimeSpent" value="16177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -548,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/java/schedule/models/converters/ProjectSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -574,16 +576,6 @@
             <element signature="e#979#980#0" expanded="true" />
             <element signature="e#1056#1057#0" expanded="true" />
             <element signature="e#1093#1094#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/java/schedule/models/entities/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,6 +611,23 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/java/schedule/models/entities/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>

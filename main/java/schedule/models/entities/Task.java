@@ -24,7 +24,7 @@ public class Task {
     private Long end;
     @Column(name = "notes")
     private String notes;
-    @ManyToOne(targetEntity = Project.class, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(targetEntity = Project.class, fetch = FetchType.EAGER)
     @JsonIgnoreProperties("tasks")
     private Project project;
     @Column(name = "planed")
