@@ -26,4 +26,8 @@ public class ProjectService {
         project.applyUpdates(payload);
         projectRepository.save(project);
     }
+
+    public Project getProject(long id){
+        return projectRepository.findById(id).orElseThrow(NotFoundException::new);
+    }
 }

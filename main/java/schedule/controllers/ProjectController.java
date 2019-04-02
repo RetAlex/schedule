@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import schedule.models.dto.payloads.CreateProjectPayload;
 import schedule.models.dto.payloads.UpdateProjectPayload;
 import schedule.models.dto.responces.IdResponse;
+import schedule.models.entities.Project;
 import schedule.services.ProjectService;
 
 @RestController
@@ -15,6 +16,11 @@ public class ProjectController {
         this.service = service;
     }
 
+    @GetMapping("/project/{id}")
+    public Project getProject(@PathVariable("id") long id){
+        return service.getProject(id);
+    }
+
     @PostMapping("/project")
     public IdResponse createProject(@RequestBody CreateProjectPayload payload){
         return new IdResponse(service.createProject(payload).getId());
@@ -22,7 +28,6 @@ public class ProjectController {
 
     @PatchMapping("/project/{id}")
     public void updateProject(@RequestBody UpdateProjectPayload payload, @PathVariable("id") long id){
-        //TODO make updateProject controller
         service.updateProject(payload, id);
     }
 }

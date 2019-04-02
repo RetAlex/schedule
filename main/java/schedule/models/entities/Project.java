@@ -1,14 +1,16 @@
 package schedule.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import schedule.models.dto.payloads.CreateProjectPayload;
 import schedule.models.dto.payloads.UpdateProjectPayload;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 @Entity(name = "projects")
 public class Project {
     @Id
@@ -18,20 +20,14 @@ public class Project {
     @Column(name = "name")
     private String name;
     @Column(name = "deadline")
-    private Date deadline;
+    private Long deadline;
     @Column(name = "color")
     private String color;
     @OneToMany(targetEntity = Task.class, mappedBy = "project")
+    @JsonIgnoreProperties("project")
     private List<Task> tasks;
 
     public Project() {
-    }
-
-    public Project(String name, Date deadline, String colour, List<Task> tasks) {
-        this.name = name;
-        this.deadline = deadline;
-        this.color = colour;
-        this.tasks = tasks;
     }
 
     public Project(CreateProjectPayload payload){

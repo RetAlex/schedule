@@ -1,13 +1,15 @@
 package schedule.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import schedule.models.dto.payloads.CreateTaskPayload;
 import schedule.models.dto.payloads.UpdateTaskPayload;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Data
+@AllArgsConstructor
 @Entity(name = "tasks")
 public class Task {
     @Id
@@ -17,32 +19,23 @@ public class Task {
     @Column(name = "title")
     private String title;
     @Column(name = "start_date")
-    private Date begin;
+    private Long begin;
     @Column(name = "finish_date")
-    private Date end;
+    private Long end;
     @Column(name = "notes")
     private String notes;
-    @ManyToOne(targetEntity = Project.class, fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(targetEntity = Project.class, fetch = FetchType.EAGER, optional = false)
+    @JsonIgnoreProperties("tasks")
     private Project project;
     @Column(name = "planed")
     private boolean planed;
     @Column(name = "position")
     private int position;
     @Column(name = "deadline")
-    private Date deadline;
+    private Long deadline;
 
     public Task(){
 
-    }
-
-    public Task(String title, Date begin, Date end, String notes, Project project, boolean planed, int position) {
-        this.title = title;
-        this.begin = begin;
-        this.end = end;
-        this.notes = notes;
-        this.project = project;
-        this.planed = planed;
-        this.position = position;
     }
 
     public Task(CreateTaskPayload createTaskPayload) {
