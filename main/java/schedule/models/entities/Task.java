@@ -33,6 +33,8 @@ public class Task {
     private int position;
     @Column(name = "deadline")
     private Long deadline;
+    @Column(name = "list")
+    private Long list;
 
     public Task(){
 
@@ -47,6 +49,7 @@ public class Task {
         if(createTaskPayload.getProject()!=null) this.project = new Project(createTaskPayload.getProject());
         this.planed = true;
         this.position = 0;
+        if(createTaskPayload.getStart()==null) list=0L;
     }
 
     public void applyUpdates(UpdateTaskPayload updateTaskPayload){
@@ -57,5 +60,7 @@ public class Task {
         if(updateTaskPayload.getNotes()!=null) this.notes = updateTaskPayload.getNotes();
         if(updateTaskPayload.getPosition()!=null) this.position = updateTaskPayload.getPosition();
         if(updateTaskPayload.getProject()!=null) this.project = new Project(updateTaskPayload.getProject());
+        if(updateTaskPayload.getBegin()==null) this.list=0L;
+        else this.list = null;
     }
 }
