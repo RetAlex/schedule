@@ -34,4 +34,8 @@ public class TaskService {
     public List<Task> getTasks(long from, long to){
         return taskRepository.getTasksInRange(from, to);
     }
+
+    public List<Task> getWaitingTasks(){
+        return taskRepository.findAllByListIsNotNull();
+    }
 }

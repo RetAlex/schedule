@@ -37,4 +37,9 @@ public class TaskController {
     public void updateTask(@PathVariable("id") long id, @RequestBody UpdateTaskPayload payload){
         taskService.updateTask(payload, id);
     }
+
+    @GetMapping("/pendingTasks")
+    public List<Task> getPendingTasks(){
+        return taskService.getWaitingTasks();
+    }
 }
