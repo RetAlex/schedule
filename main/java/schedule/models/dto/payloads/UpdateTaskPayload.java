@@ -11,4 +11,5 @@ public class UpdateTaskPayload {
     private Long deadline;
     private Long project;
     private Integer position;
+    private Long list;
 }

@@ -60,7 +60,6 @@ public class Task {
         if(updateTaskPayload.getNotes()!=null) this.notes = updateTaskPayload.getNotes();
         if(updateTaskPayload.getPosition()!=null) this.position = updateTaskPayload.getPosition();
         if(updateTaskPayload.getProject()!=null) this.project = new Project(updateTaskPayload.getProject());
-        if(updateTaskPayload.getBegin()==null) this.list=0L;
-        else this.list = null;
+        this.list = updateTaskPayload.getList();
     }
 }
