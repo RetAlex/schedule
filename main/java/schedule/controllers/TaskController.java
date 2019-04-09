@@ -23,7 +23,7 @@ public class TaskController {
         return taskService.getTask(id);
     }
 
-    @GetMapping("/tasks")
+    @GetMapping("/task")
     public List<Task> getTasksInRange(@RequestParam("from") long from, @RequestParam("to") long to){
         return taskService.getTasks(from, to);
     }
@@ -41,5 +41,10 @@ public class TaskController {
     @GetMapping("/pendingTasks")
     public List<Task> getPendingTasks(){
         return taskService.getWaitingTasks();
+    }
+
+    @GetMapping("/archiveTasks")
+    public List<Task> getArchiveTasks(){
+        return taskService.getArchive();
     }
 }

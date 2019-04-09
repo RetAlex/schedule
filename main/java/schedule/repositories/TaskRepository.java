@@ -7,8 +7,8 @@ import schedule.models.entities.Task;
 import java.util.List;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    @Query(value = "select * from tasks where start_date>=?1 and start_date<=?2 and list is null", nativeQuery = true)
+    @Query(value = "select * from tasks where deadline>=?1 and deadline<=?2 and list is null", nativeQuery = true)
     List<Task> getTasksInRange(long from, long to);
 
-    List<Task> findAllByListIsNotNull();
+    List<Task> findAllByList(long list);
 }

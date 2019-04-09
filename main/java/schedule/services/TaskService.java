@@ -36,6 +36,10 @@ public class TaskService {
     }
 
     public List<Task> getWaitingTasks(){
-        return taskRepository.findAllByListIsNotNull();
+        return taskRepository.findAllByList(0);
+    }
+
+    public List<Task> getArchive(){
+        return taskRepository.findAllByList(-1);
     }
 }
