@@ -7,6 +7,8 @@ import schedule.models.dto.responces.IdResponse;
 import schedule.models.entities.Project;
 import schedule.services.ProjectService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class ProjectController {
@@ -19,6 +21,11 @@ public class ProjectController {
     @GetMapping("/project/{id}")
     public Project getProject(@PathVariable("id") long id){
         return service.getProject(id);
+    }
+
+    @GetMapping("/project")
+    public List<Project> getProjects(){
+        return service.getProjects();
     }
 
     @PostMapping("/project")

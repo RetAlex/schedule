@@ -7,6 +7,8 @@ import schedule.models.entities.Project;
 import schedule.models.exceptions.NotFoundException;
 import schedule.repositories.ProjectRepository;
 
+import java.util.List;
+
 @Service
 public class ProjectService {
     private final ProjectRepository projectRepository;
@@ -29,5 +31,9 @@ public class ProjectService {
 
     public Project getProject(long id){
         return projectRepository.findById(id).orElseThrow(NotFoundException::new);
+    }
+
+    public List<Project> getProjects(){
+        return projectRepository.findAll();
     }
 }
