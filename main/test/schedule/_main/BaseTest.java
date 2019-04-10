@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import schedule.controllers.ProjectController;
+import schedule.services.ProjectServiceTest;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Runner.class)
@@ -15,6 +15,6 @@ public class BaseTest {
 
     @Before()
     public void start(){
-        mockMvc = MockMvcBuilders.standaloneSetup(ProjectController.class).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(ProjectServiceTest.class).build();
     }
 }

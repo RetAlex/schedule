@@ -7,7 +7,9 @@ import schedule.models.dto.payloads.CreateProjectPayload;
 import schedule.models.dto.payloads.UpdateProjectPayload;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @AllArgsConstructor
@@ -34,6 +36,7 @@ public class Project {
         this.color = payload.getColor();
         this.name = payload.getName();
         this.deadline = payload.getDeadline();
+        tasks = new ArrayList<>();
     }
 
     public void applyUpdates(UpdateProjectPayload payload){
@@ -44,5 +47,21 @@ public class Project {
 
     public Project(long id){
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Project project = (Project) o;
+        return id == project.id &&
+                name.equals(project.name) &&
+                Objects.equals(deadline, project.deadline) &&
+                Objects.equals(color, project.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, deadline, color);
     }
 }
